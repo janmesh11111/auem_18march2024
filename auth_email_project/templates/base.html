@@ -1,0 +1,28 @@
+<html>
+<head>
+<title> Kamal classes </title>
+<style>
+*{font-size:40px;}
+.nav {background-color:coral;}
+.nav a{ color:white; text-decoration:none; margin:70px;}
+
+</style>
+</head>
+<body>
+<center>
+<div class="nav">
+{% if user.is_authenticated %}
+	<a href="{% url 'ulogout' %}"> Logout </a>
+{% else %}
+	<a href="{% url 'ulogin' %}"> Login </a>
+	<a href="{% url 'usignup' %}"> Signup </a>
+	<a href="{% url 'rnp' %}"> Request New Password </a>
+{% endif %}
+
+</div>
+{% block content %}
+{% endblock %}
+</center>
+</body>
+</html>
+
